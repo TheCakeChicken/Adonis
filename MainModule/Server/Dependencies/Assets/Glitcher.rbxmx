@@ -1,0 +1,78 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="LocalScript" referent="RBXCECF072785C749019E05961BB620024A">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<bool name="Disabled">true</bool>
+			<Content name="LinkedSource"><null></null></Content>
+			<string name="Name">Glitcher</string>
+			<string name="ScriptGuid">{079B20F5-B8BD-4D89-81C1-606AA11AB513}</string>
+			<ProtectedString name="Source"><![CDATA[wait()
+local torso = script.Parent
+local posed = false
+local type = script.Type.Value
+local int = script.Num.Value
+game:GetService("RunService").RenderStepped:connect(function()
+if posed then
+  if type == 'ghost' then
+    torso.CFrame = torso.CFrame+Vector3.new(((tonumber(int) or 100)*2),0,0)
+  elseif type == 'trippy' then
+    torso.CFrame = torso.CFrame*CFrame.new(((tonumber(int) or 100)*2),0,0)
+  elseif type == 'vibrate' then
+    local num = math.random(1,4)
+    if num == 1 then
+      torso.CFrame = torso.CFrame*CFrame.new(((tonumber(int)*2) or 100),0,0)
+    elseif num == 2 then
+      torso.CFrame = torso.CFrame*CFrame.new(-((tonumber(int)*2) or 100),0,0)
+    elseif num == 3 then
+      torso.CFrame = torso.CFrame*CFrame.new(0,0,-((tonumber(int)*2) or 100))
+    elseif num == 4 then
+      torso.CFrame=torso.CFrame*CFrame.new(0,0,((tonumber(int)*2) or 100))
+    end
+  end
+  posed = false
+else
+  if type == 'ghost' then
+    torso.CFrame = torso.CFrame+Vector3.new(-((tonumber(int)*2) or 100),0,0)
+  elseif type == 'trippy' then
+    torso.CFrame = torso.CFrame*CFrame.new(-((tonumber(int)*2) or 100),0,0)
+  elseif type == 'vibrate' then
+    local num = math.random(1,4)
+    if num == 1 then
+      torso.CFrame = torso.CFrame*CFrame.new(((tonumber(int)*2) or 100),0,0)
+    elseif num == 2 then
+      torso.CFrame = torso.CFrame*CFrame.new(-((tonumber(int)*2) or 100),0,0)
+    elseif num == 3 then
+      torso.CFrame = torso.CFrame*CFrame.new(0,0,-((tonumber(int)*2) or 100))
+    elseif num == 4 then
+      torso.CFrame = torso.CFrame*CFrame.new(0,0,((tonumber(int)*2) or 100))
+    end
+  end
+  posed = true
+end
+end)]]></ProtectedString>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+		<Item class="NumberValue" referent="RBX582ABCFD9370475DBAEC9DC8D9AAAE9D">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">Num</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<double name="Value">3214.431999999999789</double>
+			</Properties>
+		</Item>
+		<Item class="StringValue" referent="RBXF71C6F0F31854733A9D029C0710F3AD2">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">Type</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<string name="Value"></string>
+			</Properties>
+		</Item>
+	</Item>
+</roblox>

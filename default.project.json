@@ -10,15 +10,7 @@
         "$className": "Folder",
 
         "MainModule": {
-          "$className": "Folder",
-
-          "Server": {
-            "$path": "Server"
-          },
-
-          "Client": {
-            "$path": "Client"
-          }
+          "$path": "MainModule"
         },
 
         "Adonis_Loader": {
